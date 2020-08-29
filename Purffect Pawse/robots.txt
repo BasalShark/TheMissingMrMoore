@@ -1,0 +1,8 @@
+User-agent: *
+
+Allow: /homepage.html
+Allow: /aboutus.html <!-- Disabled currently! -->
+Allow: /aboutus.html <!-- Disabled currently! -->
+Allow: /aboutus.html <!-- Disabled currently! -->
+
+Disallow: /secretfile.txt
