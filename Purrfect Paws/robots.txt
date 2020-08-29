@@ -4,5 +4,3 @@ Allow: /homepage.html
 Allow: /aboutus.html  <!-- Disabled currently! -->
 Allow: /products.html  <!-- Disabled currently! -->
 Allow: /contactus.html  <!-- Disabled currently! -->
-
-Sitemap Unavailable
