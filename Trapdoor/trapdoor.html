@@ -2,21 +2,50 @@
   <head>
     <title>~~~~~~~~~~~~~~~~~</title>
     <style>
+	  * {margin: 0px; padding: 0px;}
       body {background-color:black;}
-      button {color: blue; padding: 2.5%; border-radius: 50%; font-size: 20px;}
-      img {width: 80%; height: auto;}
+      #left, #right {color: blue; padding-left: 1.25%; padding-right: 1.25%; border-radius: 50%; font-size: 50px;}
+	  #start {float: center; transform: translate(12.5%, -175%); color: red; background-color: black; padding: 10% 25%; font-size: 70px; font-family: Chiller;}
+	  #left {float:left; transform: translate(50%, -700%);}
+	  #right {float: right; transform: translate(-50%, -700%);}
+      img {width: 100%; height: auto; transform: translate(0, -60px); float:left;}
+	  
+
+:fullscreen {
+  overflow: hidden;
+  }
+
+/* Standard syntax */
+:fullscreen #start{
+  display: none;
+
+}
     </style>
   </head>
   <body>
-    <main>
-      <button id = "left">&#8249;</button>
-      <br>
-      <img src="W1.png" id="wall1" style="display = block">
-      <img src="W2.png" id="wall2" style="display = none">
-      <img src="W3.png" id="wall3" style="display = none">
-      <img src="W4.png" id="wall4" style="display = none">
-      <br>
+      <img src="W1.png" id="wall1" style="display:block">
+      <img src="W2.png" id="wall2" style="display:none">
+      <img src="W3.png" id="wall3" style="display:none">
+      <img src="W4.png" id="wall4" style="display:none">
+	  <button id = "start" onclick = "openFullscreen()">Click to begin</button>
+	  <button id = "left">&#8249;</button>
       <button id = "right">&#8250;</button>
-    </main>
   </body>
+  <script>
+var elem = document.documentElement;
+function openFullscreen() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+  </script>
 </html>
