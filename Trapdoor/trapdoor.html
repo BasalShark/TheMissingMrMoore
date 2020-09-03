@@ -28,10 +28,11 @@
       <img src="W3.png" id="wall3" style="display:none">
       <img src="W4.png" id="wall4" style="display:none">
 	  <button id = "start" onclick = "openFullscreen()">Click to begin</button>
-	  <button id = "left">&#8249;</button>
-      <button id = "right">&#8250;</button>
+	  <button id = "left" onclick = "displayPrevious()">&#8249;</button>
+      <button id = "right" onclick = "displayNext()">&#8250;</button>
   </body>
   <script>
+  
 var elem = document.documentElement;
 function openFullscreen() {
   document.body.scrollTop = 0; // For Safari
@@ -47,5 +48,49 @@ function openFullscreen() {
   }
 }
 
+var pic = 1;
+function displayNext() {
+	pic = pic + 1;
+	
+	if (pic > 4) {
+		pic = 1;
+	}
+	
+	document.getElementById("wall1").style.display="none";
+	document.getElementById("wall2").style.display="none";
+	document.getElementById("wall3").style.display="none";
+	document.getElementById("wall4").style.display="none";
+	if (pic == 1) {
+		document.getElementById("wall1").style.display="block";
+	} else if (pic == 2) {
+		document.getElementById("wall2").style.display="block";
+	} else if (pic == 3) {
+		document.getElementById("wall3").style.display="block";
+	} else {
+		document.getElementById("wall4").style.display="block";
+	}
+}
+
+function displayPrevious() {
+	pic = pic - 1;
+	
+	if (pic < 1) {
+		pic = 4;
+	}
+	
+	document.getElementById("wall1").style.display="none";
+	document.getElementById("wall2").style.display="none";
+	document.getElementById("wall3").style.display="none";
+	document.getElementById("wall4").style.display="none";
+	if (pic == 1) {
+		document.getElementById("wall1").style.display="block";
+	} else if (pic == 2) {
+		document.getElementById("wall2").style.display="block";
+	} else if (pic == 3) {
+		document.getElementById("wall3").style.display="block";
+	} else {
+		document.getElementById("wall4").style.display="block";
+	}
+}
   </script>
 </html>
